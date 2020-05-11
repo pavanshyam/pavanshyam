@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NIM GAME!!!</title>
+        <style>
+            #container{
+                position:relative;
+                top:100px;
+                width:1040px;
+                height:1000px;
+                background-color:white;
+                margin:0 auto;
+            }
+            #style{
+                color:tomato;
+                font-size:60px;
+            }
+            #style2{
+                color:violet;
+                font-size:30px;
+            }
+            input[type='text']{
+                width:50%;
+                height:40px;
+                border-color:black;
+                font-size:30px;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1 id="style">NIM GAME WITH FRIENDS</h1>
+            <h2 id="style2">The stones on the heap:<input id="game"type='text'></h2>
+            <p id="style">enter how many stones you want to pick:<input id="me" type='text'></p>
+            <input id="visa" type="button" value="try now" onclick="dis()">
+            <script>
+                let w=document.getElementById("game").value;
+                // while(w>0){
+                    let k='A';
+                    var s=0;
+                    var temp=0;
+                    function dis(){
+                        if(document.getElementById("game").value>0){
+                            if(document.getElementById("me").value<=3){
+                                if(k=='A'){
+                                    alert("you picking the stones");
+                                    s=parseInt(document.getElementById("me").value);                                
+                                    document.getElementById("game").value-=s;
+                                    console.log(document.getElementById("game").value);
+                                    k='B';
+
+                                }else{
+                                    alert("your friend picking the stones");
+                                    temp=parseInt(document.getElementById("me").value);
+                                    document.getElementById("game").value-=temp;
+                                    k='A';
+                                }
+                                
+                                
+                            }
+                        }
+                        else{
+                            if(k=='B'){
+                                alert("YOU WIN THE MATCH");
+                            }else{
+                                alert("YOUR FRIEND WIN THE MATCH");
+                            }
+                        }
+                    }
+        
+            </script>  
+        </div>
+    </body>
+</html>
